@@ -8,8 +8,8 @@
 	 if( $IDTENTOR == ''){
 	        echo json_encode(array( "status" => "false","message" => "Parameter missing!") );
 	 }else{
-	 	$query= "SELECT * FROM tentor JOIN lesaktif ON lesaktif.idtentor=tentor.iduser JOIN aktivitasbimbel ON lesaktif.idtentor=aktivitasbimbel.idtentor WHERE tentor.statustentor='AKTIF' and tentor.iduser='$IDTENTOR';
-";       $result= mysqli_query($con, $query);
+	 	$query= "SELECT * FROM tentor join userbimbel on tentor.iduser=userbimbel.id and userbimbel.level='TENTOR' where statustentor='AKTIF' and userbimbel.id=$IDTENTOR";
+	 	  $result= mysqli_query($con, $query);
           $emparray = array();
 	                     if(mysqli_num_rows($result) > 0){  
 	                     while ($row = mysqli_fetch_assoc($result)) {
