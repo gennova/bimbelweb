@@ -4,6 +4,7 @@
   //including the database connection file
     include_once("config.php");
     $NAMA = $_POST['nama'];   
+    $HP = $_POST['hp']; 
     $JENJANG = $_POST['jenjang'];   
     $MAPEL = $_POST['mapel'];   
     $HARIJAM = $_POST['harijam'];     
@@ -16,7 +17,7 @@
 	 }else{
     try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password);
-	         $query = "CALL spInsertTentor('$NAMA','$JENJANG','$MAPEL','$HARIJAM','$KISARAN','$ALAMAT','$EMAIL','$PASSWORD')";  
+	         $query = "CALL spInsertTentor('$NAMA','$HP','$JENJANG','$MAPEL','$HARIJAM','$KISARAN','$ALAMAT','$EMAIL','$PASSWORD')";  
            // prepare for execution of the stored procedure
             $stmt = $pdo->prepare($query);
             // execute the stored procedure
