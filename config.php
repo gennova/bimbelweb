@@ -4,7 +4,7 @@ $user="u5621566_bimbel";
 $password="Semarang2020";
 $db = "u5621566_bimbel";
  
-$con = mysqli_connect($host,$zuser,$password,$db);
+$con = mysqli_connect($host,$user,$password,$db);
  //crosscek
 // Check connection
 if (mysqli_connect_errno())
